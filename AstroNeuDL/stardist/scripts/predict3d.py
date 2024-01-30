@@ -50,13 +50,14 @@ Prediction script for a 3D stardist model, usage: stardist-predict -i input.tif 
         model = StarDist3D.from_pretrained(args.model)
 
     if model is None:
-        raise ValueError(f"unknown model: {args.model}\navailable models:\n {get_registered_models(StarDist2D, verbose=True)}")
+        raise ValueError(f"unknown model: {args.model}\navailable models:\n {get_registered_models(StarDist3D, verbose=True)}")
     
     for fname in args.input:
         if args.verbose:
             print(f'reading image {fname}')
 
-        if not pathlib.Path(fname).suffix.lower() in (".tif", ".tiff"):
+
+        if not pathlib.Path(fname).suffix.lower() in [".tif", ".tiff"]:
             raise ValueError('only tiff files supported in 3D for now')
 
         img = imread(fname)
@@ -66,7 +67,8 @@ Prediction script for a 3D stardist model, usage: stardist-predict -i input.tif 
             raise ValueError(f'currently only 3d (or 4D with channel) images are supported by the prediction script')
 
         if args.axes is None:
-            args.axes = {3:'ZYX',4:'ZYXC'}[img.ndim]
+            # args.axes = {3:'ZYX',4:'ZYXC'}[img.ndim]
+            args.axes = {3:'ZYX',4:'XYCZ'}[img.ndim]
         
         if len(args.axes) != img.ndim:
             raise ValueError(f'dimension of input ({img.ndim}) not the same as length of given axes ({len(args.axes)})')
@@ -80,9 +82,9 @@ Prediction script for a 3D stardist model, usage: stardist-predict -i input.tif 
         img = normalize(img,*args.pnorm)
 
         labels, _ = model.predict_instances(img,
-                                n_tiles=args.n_tiles,
-                                prob_thresh=args.prob_thresh,
-                                nms_thresh=args.nms_thresh)
+                                            n_tiles=args.n_tiles,
+                                            prob_thresh=args.prob_thresh,
+                                            nms_thresh=args.nms_thresh)
         out = pathlib.Path(args.outdir)
         out.mkdir(parents=True,exist_ok=True)
 

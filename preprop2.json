@@ -1,0 +1,11 @@
+{
+    "use_algorithm": "Preprocessing",
+    "data": "/Users/beatrizfernandes/Tese/data/tilescans",
+    "preprocessing_steps": {
+        "duplicate": true,
+        "normalize": true,
+        "filter": true,
+        "prepare_analysis": true
+    },
+    "statistics": false
+}

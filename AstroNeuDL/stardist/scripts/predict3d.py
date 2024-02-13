@@ -81,10 +81,14 @@ Prediction script for a 3D stardist model, usage: stardist-predict -i input.tif 
             
         img = normalize(img,*args.pnorm)
 
+        if args.verbose:
+            print(f'predict instances...')
+
         labels, _ = model.predict_instances(img,
                                             n_tiles=args.n_tiles,
                                             prob_thresh=args.prob_thresh,
-                                            nms_thresh=args.nms_thresh)
+                                            nms_thresh=args.nms_thresh,
+                                            axes=args.axes)
         out = pathlib.Path(args.outdir)
         out.mkdir(parents=True,exist_ok=True)
 

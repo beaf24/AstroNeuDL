@@ -1,9 +1,9 @@
 {
 	"use_algorithm": "InstanceSegmentation",
-	"path": "/Users/beatrizfernandes/PIC2/tasks instantdl/nuclei2d_instance_segmentation/aftk7_1",
-	"pretrained_weights": "/Users/beatrizfernandes/PIC2/tasks instantdl/nuclei2d_instance_segmentation/dsb2018/logs/noft.h5",
-	"batchsize": 2,
-	"iterations_over_dataset": 20,
+	"path": "/Users/beatrizfernandes/Tese/segmentation/tilescans/",
+	"pretrained_weights": "/Users/beatrizfernandes/Tese/models/2d segmentation - mask rcnn/ftk/logs/mask_rcnn.h5",
+	"batchsize": 3,
+	"iterations_over_dataset": 0,
 	"image_size": [1024, 1024, 1],
 	"data_gen_args": {
 		"save_augmented_images": false,

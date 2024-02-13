@@ -14,6 +14,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 from scipy.spatial.distance import pdist
 from sklearn.metrics import jaccard_score
+from alive_progress import alive_bar
 
 
 def load_json(file_path):
@@ -96,25 +97,27 @@ class Evaluation2DSeg(object):
 
             logging.info("Starting the comparison of {} ROIs\n".format(len(combinations)))
             # setup toolbar
-            toolbar_width = 50
-            logging.info("Progress | [%s]" % (" " * toolbar_width))
-            logging.getLogger()[0].flush()
-            logging.info("\b" * (toolbar_width+1)) # return to start of line, after '['
+            # toolbar_width = 50
+            # logging.info("Progress | [%s]" % (" " * toolbar_width))
+            # logging.getLogger()[0].flush()
+            # logging.info("\b" * (toolbar_width+1)) # return to start of line, after '['
 
-            for (p,m) in combinations:
-                mask = msk[:,:,m]
-                prediction = pred[:,:,p]
-                iou_global[p,m] = jaccard_score(mask.flatten(), prediction.flatten(), average = None)[1]            
-                if (i+1)* 50//len(combinations) != t:
-                    t+=1
-                    logging.info("=")
-                    logging.getLogger()[0].flush()
-                i +=1
+            with alive_bar(len(combinations)) as bar:
+                for (p,m) in combinations:
+                    mask = msk[:,:,m]
+                    prediction = pred[:,:,p]
+                    iou_global[p,m] = jaccard_score(mask.flatten(), prediction.flatten(), average = None)[1]            
+                    # if (i+1)* 50//len(combinations) != t:
+                    #     t+=1
+                        # logging.info("=")
+                        # logging.getLogger()[0].flush()
+                    bar()
+                    i +=1
             
             pd.DataFrame(iou_global).to_csv("{}iou_test_{}.csv".format(self.path_metrics,id))
             n_pred.append(pred.shape[2])
             n_msk.append(msk.shape[2])
-            logging.info("]\n")
+            # logging.info("]\n")
 
         ratio = list(np.array(n_pred)/np.array(n_msk))
 

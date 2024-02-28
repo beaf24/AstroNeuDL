@@ -1,0 +1,40 @@
+Input files: 
+0
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/13B_Day02_FullStack_Dapi_Aniso0p5.tif
+1
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/22B_Day03_FullStack_Dapi_Aniso0p5.tif
+2
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/SA_20211109_Sox2-GroundTruth_12A.tif
+3
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/19B_Day03_FullStack_Dapi_Aniso0p5.tif
+4
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/02B_Day00.tif
+5
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/SA_20211109_Sox2-GroundTruth_22A.tif
+6
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/01B_Day00_FullStack_Dapi_Aniso0p5.tif
+7
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/19B_Day03.tif
+8
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/13B_Day02.tif
+9
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/01B_Day00.tif
+10
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/SA_20211109_Sox2-GroundTruth_15A.tif
+11
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/01A_Day00_FullStack_Dapi_Aniso0p5.tif
+12
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/SA_20211109_Sox2-GroundTruth_05A.tif
+13
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/22B_Day03.tif
+14
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/SA_20211109_Sox2-GroundTruth_25A.tif
+15
+/home/haicu/dominik.waibel/jupyter/Manual_Segmented/Train_combined_Sox2_2/Dapi_in-silico_Dapi/02B_Day00_FullStack_Dapi_Aniso0p5.tif
+
+
+
+File 4,7 in validaiton set
+n_rays = 128
+trained for 80 epochs
+

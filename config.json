@@ -1,10 +1,10 @@
 {
 	"use_algorithm": "InstanceSegmentation",
-	"path": "/Users/beatrizfernandes/Tese/segmentation/tilescans/",
+	"path": "/Users/beatrizfernandes/Tese/segmentation/tilescans 2/",
 	"pretrained_weights": "/Users/beatrizfernandes/Tese/models/2d segmentation - mask rcnn/ftk/logs/mask_rcnn.h5",
 	"batchsize": 3,
 	"iterations_over_dataset": 0,
-	"image_size": [1024, 1024, 1],
+	"image_size": [512, 512, 1],
 	"data_gen_args": {
 		"save_augmented_images": false,
 		"resample_images": false, 
@@ -25,5 +25,5 @@
 		"binarize_mask": false},
 	"calculate_uncertainty": false,
 	"loss_function": "mse",
-	"evaluation": true
+	"evaluation": false
 }
